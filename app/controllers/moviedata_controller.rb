@@ -48,4 +48,21 @@ class MoviedataController < ApplicationController
     render({ :template => "movie_templates/movie_details"}) 
   end
 
+  def actors
+
+    @actor_list = Actor.all
+
+    render({ :template => "movie_templates/actors"}) 
+  end
+
+  def actor_details
+    actor_id = params.fetch("actor_id")
+
+    @actor = Actor.where({:id => actor_id}).at(0)
+
+    @filmography = Character.where( {:actor_id => actor_id} )
+
+    render({ :template => "movie_templates/actor_details"}) 
+  end
+
 end
