@@ -26,32 +26,32 @@
       <th>
       </th>
     </tr>
-    <% @movie_list.order({:title => :asc}).each do |a_movie| %>
+    <% @movie_list.order({:year => :desc, :title => :asc}).each do |a_movie| %>
 
       <tr>
-        <th>
+        <td>
           <%= a_movie.id %>
-        </th>
+        </td>
         
-        <th>
+        <td>
           <img src=<%= a_movie.image %> alt=<%= a_movie.title %> style="width:250px">
-        </th>
+        </td>
         
-        <th>
+        <td>
           <%= a_movie.title %>
-        </th>
+        </td>
         
-        <th>
+        <td>
           <%= a_movie.year %>
-        </th>
+        </td>
 
-        <th>
+        <td>
           <%= Director.where({ :id => a_movie.director_id }).at(0).name %>
-        </th>
+        </td>
 
-        <th>
-          <a href="movies/<%= a_movie.id %>">Show details</a>
-        </th>
+        <td>
+          <a href="/movies/<%= a_movie.id %>">Show details</a>
+        </td>
       </tr>
 
     <% end %>

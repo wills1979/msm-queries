@@ -22,24 +22,24 @@
       <th>
       </th>
     </tr>
-    <% @director_list.order({:name => :asc}).each do |a_director| %>
+    <% @director_list.order({:dob => :desc}).each do |a_director| %>
 
       <tr>
-        <th>
+        <td>
           <%= a_director.id %>
-        </th>
-        <th>
+        </td>
+        <td>
           <img src=<%= a_director.image %> alt=<%= a_director.name %> style="width:250px">
-        </th>
-        <th>
+        </td>
+        <td>
           <%= a_director.name %>
-        </th>
-        <th>
+        </td>
+        <td>
           <%= a_director.dob %>
-        </th>
-        <th>
-          <a href="directors/<%= a_director.id %>">Show details</a>
-        </th>
+        </td>
+        <td>
+          <a href="/directors/<%= a_director.id %>">Show details</a>
+        </td>
       </tr>
 
     <% end %>

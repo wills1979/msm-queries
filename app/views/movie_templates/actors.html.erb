@@ -25,25 +25,25 @@
     <% @actor_list.order({:name => :asc}).each do |a_actor| %>
 
       <tr>
-        <th>
+        <td>
           <%= a_actor.id %>
-        </th>
+        </td>
         
-        <th>
+        <td>
           <img src=<%= a_actor.image %> alt=<%= a_actor.name %> style="width:250px">
-        </th>
+        </td>
         
-        <th>
+        <td>
           <%= a_actor.name %>
-        </th>
+        </td>
         
-        <th>
+        <td>
           <%= a_actor.dob %>
-        </th>
+        </td>
 
-        <th>
-          <a href="actors/<%= a_actor.id %>">Show details</a>
-        </th>
+        <td>
+          <a href="/actors/<%= a_actor.id %>">Show details</a>
+        </td>
       </tr>
 
     <% end %>
